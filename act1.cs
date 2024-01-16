@@ -16,7 +16,14 @@ public class HelloWorld
         int y = 100;
         
         Console.WriteLine ("Where will you head of to?: ");
-        Console.WriteLine ("The places with quests are Cave, Dungeon, and Forest");
+        Thread.Sleep(1000);
+        Console.WriteLine ("The places with quests are:");
+        Thread.Sleep(1000);
+        Console.WriteLine ("Cave");
+        Thread.Sleep(1000);
+        Console.WriteLine ("Dungeon");
+        Thread.Sleep(1000);
+        Console.WriteLine ("Forest");
         string place = Console.ReadLine();
         
         string a = "Cave";

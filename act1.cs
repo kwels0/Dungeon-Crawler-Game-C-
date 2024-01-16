@@ -58,7 +58,25 @@ public class HelloWorld
             Thread.Sleep(1000);
                 if (choice_1 == "YES")
                 {
-                Console.WriteLine ("You have lit the torch and an undead has aproached you. Prepare for battle.");
+                Console.WriteLine ("You have lit the torch and an undead has noticed you. Prepare for battle.");
+                Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                
+                int move = Convert.ToInt32(Console.ReadLine());
+                
+                switch (move)
+                {
+                    case 1:
+                    Console.WriteLine ("Attack with your sword");
+                    break;
+                    
+                    case 2:
+                    Console.WriteLine ("Talk");
+                    break;
+                    
+                    case 3: 
+                    Console.WriteLine ("Flee");
+                    break;
+                }
                 }   
                 else if (choice_1 == "NO")
                 {

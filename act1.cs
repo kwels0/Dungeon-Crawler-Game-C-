@@ -9,12 +9,12 @@ public class HelloWorld
         Console.WriteLine ("Game Start!!!");
         Thread.Sleep(1000);
         Console.WriteLine ("In the realm of Runettera, a lone adventurer emerges.The adventurer goes and ventures out to discover treasures yet to be uncovered by man. Guided by destiny, he embarks on a perilous journey using his abilities with the sword and determination to grab treaures for his own. With his skills by his side, he must venture to unknown places, fight monsters, and prevent himself from dying from his own choices. You are that adventurer and must pick the correct choices in order to discover treasures and not die.");
-        Thread.Sleep(300);
+        Thread.Sleep(800);
         string line = "__________________________________________";
-        Console.WriteLine("What's your name adventurer? :");
+        Console.WriteLine(line + Environment.NewLine + "What's your name adventurer? :");
         string name = Console.ReadLine();
         Console.WriteLine("Your name is: " + name);
-        Thread.Sleep(500);
+        Thread.Sleep(800);
         
         Console.WriteLine (line + Environment.NewLine + "You start with a sword, armor, and 100 base HP.");
         int health = 100;
@@ -57,26 +57,73 @@ public class HelloWorld
             Thread.Sleep(1000);
                 if (choice_1 == "Yes")
                 {
-                Console.WriteLine ("You have lit the torch and an undead has noticed you. Prepare for battle.");
+                Console.WriteLine ("You have lit the torch and a skeleton warrior has noticed you. Prepare for battle.");
                 Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
-                int move = Convert.ToInt32(Console.ReadLine());
-                switch (move)
-                {
-                    case 1:
-                    Console.WriteLine ("You attacked it with your sword.");
-                    Thread.Sleep(700);
-                    Console.WriteLine ("It died.");
-                    break;
-                    
-                    case 2:
-                    Console.WriteLine ("Talk");
-                    
-                    break;
-                    
-                    case 3: 
-                    Console.WriteLine ("Flee");
-                    break;
-                }
+                start_1:
+                    int move = Convert.ToInt32(Console.ReadLine());
+                    switch (move)
+                    {
+                        case 1:
+                        Console.WriteLine ("You attacked it with your sword.");
+                        Thread.Sleep(700);
+                        Console.WriteLine ("It died.");
+                        break;
+                        
+                        case 2:
+                        Console.WriteLine ("Talk");
+                        break;
+                        
+                        case 3: 
+                        Console.WriteLine ("Flee");
+                        break;
+                    }
+                        if (move == 1)
+                        {
+                        Console.WriteLine ("You have killed the undead. Gained a bone." + Environment.NewLine + line);   
+                        Thread.Sleep(1000);
+                        Console.WriteLine ("Killing the undead was a trap. The Skeleton boss was alarmed.");
+                        Thread.Sleep(500);
+                        Console.WriteLine ("Get ready to fight the boss." + Environment.NewLine + "Battle Start!");
+                        Thread.Sleep(800);
+                        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                        Thread.Sleep(500);
+                        Console.WriteLine ("The Skeleton boss has 100HP");
+                        }
+                        
+                        else if (move == 2)
+                        {
+                        Console.WriteLine ("The undead does not have a mouth so it just rattles.");
+                        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                        goto start_1;
+                        }
+                        else if (move == 3)
+                        {
+                        Console.WriteLine ("You have fled the battle.");
+                        Thread.Sleep(700);
+                        Console.WriteLine ("You sneaked past na skeleton warrior onto the boss room.");
+                        Thread.Sleep(700);
+                        Console.WriteLine ("As you entered the boss room the Skeleton Boss immediatly starts the battle" + Environment.NewLine + "Battle Begin!");
+                        }
+                        
+                        start_2:
+                            int skel_boss = Convert.ToInt32(Console.ReadLine());
+                            switch (skel_boss)
+                            {
+                                case 1:
+                                Console.WriteLine ("You attacked it with your sword.");
+                                Thread.Sleep(700);
+                                Console.WriteLine ("It dealt 30 damage.");
+                                break;
+                                
+                                case 2:
+                                Console.WriteLine ("Talk");
+                                break;
+                                
+                                case 3: 
+                                Console.WriteLine ("Flee");
+                                break;
+                            }
+                
                 }   
                 else if (choice_1 == "No")
                 {
@@ -103,9 +150,9 @@ public class HelloWorld
         Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + b);
         Console.WriteLine (dungeon);
         
-        Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a monster looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
+        Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a goblin looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
         
-        start_1:
+        start_2:
             String d_choice_1 = Console.ReadLine();
             if (d_choice_1 == "Attack")
             {
@@ -127,21 +174,7 @@ public class HelloWorld
                         Console.WriteLine ("3. Flee");
                         break;
             }
-                if (move == 1)
-                {
-                Console.WriteLine ("You have killed the undead. Gained a bone.");   
-                Thread.Sleep(1000);
-                Console.WriteLine ("Killing the undead was a trap. The boss was alarmed.");
-                Thread.Sleep(500);
-                Console.WriteLine ("Get ready to fight the boss. Battle Start.");
-                }
-                else if (move == 2)
-                {
-                Console.WriteLine ("The undead does not have a mouth so it just rattles.");
-                goto start_1;
-                }
-                else if (move == 3)
-                Console.WriteLine ("You have fled the battle.");
+                
             }
         else if (d_choice_1 == "Sneak around")
         {

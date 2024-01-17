@@ -60,9 +60,7 @@ public class HelloWorld
                 {
                 Console.WriteLine ("You have lit the torch and an undead has noticed you. Prepare for battle.");
                 Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
-                
                 int move = Convert.ToInt32(Console.ReadLine());
-                
                 switch (move)
                 {
                     case 1:
@@ -89,6 +87,38 @@ public class HelloWorld
         {
         Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + b);
         Console.WriteLine (dungeon);
+        
+        Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a monster looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
+        
+        String d_choice_1 = Console.ReadLine();
+        if (d_choice_1 == "Attack")
+        {
+        Console.WriteLine ("Prepare for battle");
+        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+        int move = Convert.ToInt32(Console.ReadLine());
+        switch (move)
+        {
+                    case 1:
+                    Console.WriteLine ("1. Attack with your sword");
+                    break;
+                    
+                    case 2:
+                    Console.WriteLine ("2. Talk");
+                    break;
+                    
+                    case 3: 
+                    Console.WriteLine ("3. Flee");
+                    break;
+        }
+            if (move == 1)
+            {
+            Console.WriteLine ("You have killed the undead. Gained a bone.");    
+            }
+        }
+        else if (d_choice_1 == "Sneak around")
+        {
+        Console.WriteLine ("Sneaking around was succesful you are now in the boss room");    
+        }
         }
         
         else if (place == "Forest")

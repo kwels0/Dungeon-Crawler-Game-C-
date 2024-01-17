@@ -50,7 +50,7 @@ public class HelloWorld
             string path = Console.ReadLine();
             if (path == "Right")
             {
-            Thread.Sleep(1000);
+            Thread.Sleep(700);
             Console.WriteLine ("You decided to go right. Light does not reach but there's an unlit torch next to you. Will you light it?");
             Console.WriteLine ("Yes or No");
                 string choice_1 = Console.ReadLine();
@@ -85,8 +85,6 @@ public class HelloWorld
                         Thread.Sleep(500);
                         Console.WriteLine ("Get ready to fight the boss." + Environment.NewLine + "Battle Start!");
                         Thread.Sleep(800);
-                        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
-                        Thread.Sleep(500);
                         Console.WriteLine ("The Skeleton boss has 100HP");
                         }
                         
@@ -100,11 +98,11 @@ public class HelloWorld
                         {
                         Console.WriteLine ("You have fled the battle.");
                         Thread.Sleep(700);
-                        Console.WriteLine ("You sneaked past na skeleton warrior onto the boss room.");
+                        Console.WriteLine ("You sneaked past the skeleton warrior onto the boss room.");
                         Thread.Sleep(700);
                         Console.WriteLine ("As you entered the boss room the Skeleton Boss immediatly starts the battle" + Environment.NewLine + "Battle Begin!");
                         }
-                        
+                        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
                         start_2:
                             int skel_boss = Convert.ToInt32(Console.ReadLine());
                             switch (skel_boss)
@@ -112,7 +110,7 @@ public class HelloWorld
                                 case 1:
                                 Console.WriteLine ("You attacked it with your sword.");
                                 Thread.Sleep(700);
-                                Console.WriteLine ("It dealt 30 damage.");
+                                Console.WriteLine ("CRITICAL HIT. The boss died in 1-hit.");
                                 break;
                                 
                                 case 2:
@@ -123,6 +121,35 @@ public class HelloWorld
                                 Console.WriteLine ("Flee");
                                 break;
                             }
+                            if (skel_boss == 1)
+                            {
+                            Thread.Sleep (500);
+                            Console.WriteLine ("YOU WON CONGRATS!.");
+                            }
+                            else if (skel_boss == 2)
+                            {
+                            Console.WriteLine ("Your action was useless againts the boss.");
+                            Thread.Sleep (500);
+                            Console.WriteLine ("It is now charging an insta-death attack you can't dodge.");
+                            Thread.Sleep (500);
+                            for (int i = 1; i < 5; i++) 
+                            {
+                            Console.WriteLine(i + "hahga");
+                            }
+                            Console.WriteLine ("You have been hit by the death ray. You are dead." + dead);
+                            }
+                            else if (skel_boss == 3)
+                            {
+                            Console.WriteLine ("Your action was useless againts the boss.");
+                            Thread.Sleep (500);
+                            Console.WriteLine ("It is now charging an insta-death attack you can't dodge.");
+                            Thread.Sleep (500);
+                            for (int i = 1; i < 5; i++) 
+                            {
+                            Console.WriteLine(i + "hrhghrhgrhhngg");
+                            }
+                            Console.WriteLine ("You have been hit by the death ray. You are dead." + dead);
+                            }
                 
                 }   
                 else if (choice_1 == "No")
@@ -132,16 +159,73 @@ public class HelloWorld
             }
             else if (path == "Left")
             {
-            Console.WriteLine ("You decided to go right. You have encountered a chest. Will you open it?" + Environment.NewLine + "Yes or No");
+            Console.WriteLine ("You decided to go left. You have encountered a chest. Will you open it?" + Environment.NewLine + "Yes or No");
                 string choice = Console.ReadLine ();
                 if (choice == "Yes")
                 {
                 Console.WriteLine ("It was a mimic and you were eaten. You have died." + dead);
                 }
                 else if (choice == "No")
-                Console.WriteLine ("You have decided to not open the chest. You continued your path and discovered it was a dragon's cave.");
-                Thread.Sleep(1000);
-                Console.WriteLine ("The dragon has awoken due to your presence prepare for battle.");
+                {
+                Console.WriteLine ("You have decided to not open the chest." + line + "\nYou continued your path and discovered the Skeleton boss room.");
+                Thread.Sleep(800);
+                Console.WriteLine ("As you entered the boss room the Skeleton Boss immediatly starts the battle" + Environment.NewLine + "Battle Begin!");
+                Console.WriteLine (line);
+                Thread.Sleep (800);
+                Console.WriteLine ("Get ready to fight the boss." + Environment.NewLine + "Battle Start!");
+                Thread.Sleep(800);
+                Console.WriteLine ("The Skeleton boss has 100HP");
+                Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                start_2:
+                    int skel_boss = Convert.ToInt32(Console.ReadLine());
+                    switch (skel_boss)
+                    {
+                        case 1:
+                        Console.WriteLine ("You attacked it with your sword.");
+                        Thread.Sleep(700);
+                        Console.WriteLine ("CRITICAL HIT. The boss died in 1-hit.");
+                        break;
+                                
+                        case 2:
+                        Console.WriteLine ("Talk");
+                        break;
+                                
+                        case 3: 
+                        Console.WriteLine ("Flee");
+                        break;
+                    }
+                            if (skel_boss == 1)
+                            {
+                            Thread.Sleep (500);
+                            Console.WriteLine ("YOU WON CONGRATS!.");
+                            }
+                            else if (skel_boss == 2)
+                            {
+                            Console.WriteLine ("Your action was useless againts the boss.");
+                            Thread.Sleep (500);
+                            Console.WriteLine ("It is now charging an insta-death attack you can't dodge.");
+                            Thread.Sleep (500);
+                            for (int i = 1; i < 5; i++) 
+                            {
+                            Console.WriteLine(i + "hahga");
+                            }
+                            Console.WriteLine ("You have been hit by the death ray. You are dead." + dead);
+                            }
+                            else if (skel_boss == 3)
+                            {
+                            Console.WriteLine ("Your action was useless againts the boss.");
+                            Thread.Sleep (500);
+                            Console.WriteLine ("It is now charging an insta-death attack you can't dodge.");
+                            Thread.Sleep (500);
+                            for (int i = 1; i < 5; i++) 
+                            {
+                            Console.WriteLine(i + "hrhghrhgrhhngg");
+                            }
+                            Console.WriteLine ("You have been hit by the death ray. You are dead." + dead);
+                            }
+                }
+                
+                
             }
         }
         
@@ -161,18 +245,17 @@ public class HelloWorld
             int move = Convert.ToInt32(Console.ReadLine());
             switch (move)
             {
-                        case 1:
-                        Console.WriteLine ("1. Attack with your sword");
-                        break;
+                case 1:
+                Console.WriteLine ("1. Attack with your sword");
+                break;
                         
-                        case 2:
-                        Console.WriteLine ("2. Talk");
+                case 2:
+                Console.WriteLine ("2. Talk");
+                break;
                         
-                        break;
-                        
-                        case 3: 
-                        Console.WriteLine ("3. Flee");
-                        break;
+                case 3: 
+                Console.WriteLine ("3. Flee");
+                break;
             }
                 
             }

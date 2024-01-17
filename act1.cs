@@ -16,9 +16,9 @@ public class HelloWorld
         Console.WriteLine("Your name is: " + name);
         Thread.Sleep(500);
         
-        Console.WriteLine (line + Environment.NewLine + "You start with a sword, armor, and 100 base HP and MP.");
-        int x = 100;
-        int y = 100;
+        Console.WriteLine (line + Environment.NewLine + "You start with a sword, armor, and 100 base HP.");
+        int health = 100;
+        int magic = 100;
 
         
         Console.WriteLine (line + Environment.NewLine + "Where will you head of to?: ");
@@ -44,19 +44,18 @@ public class HelloWorld
         
         if (place == "Cave")
         {
-        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + a);
-        Console.WriteLine (cave);
+        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + a + cave + Environment.NewLine + line);
         Thread.Sleep(1000);
-        Console.WriteLine ("You have entered the cave. Their appears to be 2 pathways. Left or Right. Where will you go?");
+        Console.WriteLine ("You have entered the cave. Their appears to be 2 pathways. Where will you go?" + Environment.NewLine + line + Environment.NewLine + "Right or Left?" + Environment.NewLine + line);
             string path = Console.ReadLine();
             if (path == "Right")
             {
             Thread.Sleep(1000);
-            Console.WriteLine ("You decided to go right and light does not reach but there's an unlit torch next to you. Will you light it?");
-            Console.WriteLine ("YES or NO");
+            Console.WriteLine ("You decided to go right. Light does not reach but there's an unlit torch next to you. Will you light it?");
+            Console.WriteLine ("Yes or No");
                 string choice_1 = Console.ReadLine();
             Thread.Sleep(1000);
-                if (choice_1 == "YES")
+                if (choice_1 == "Yes")
                 {
                 Console.WriteLine ("You have lit the torch and an undead has noticed you. Prepare for battle.");
                 Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
@@ -64,11 +63,14 @@ public class HelloWorld
                 switch (move)
                 {
                     case 1:
-                    Console.WriteLine ("Attack with your sword");
+                    Console.WriteLine ("You attacked it with your sword.");
+                    Thread.Sleep(700);
+                    Console.WriteLine ("It died.");
                     break;
                     
                     case 2:
                     Console.WriteLine ("Talk");
+                    
                     break;
                     
                     case 3: 
@@ -76,10 +78,23 @@ public class HelloWorld
                     break;
                 }
                 }   
-                else if (choice_1 == "NO")
+                else if (choice_1 == "No")
                 {
                 Console.WriteLine ("You died." + dead);
                 }
+            }
+            else if (path == "Left")
+            {
+            Console.WriteLine ("You decided to go right. You have encountered a chest. Will you open it?" + Environment.NewLine + "Yes or No");
+                string choice = Console.ReadLine ();
+                if (choice == "Yes")
+                {
+                Console.WriteLine ("It was a mimic and you were eaten. You have died." + dead);
+                }
+                else if (choice == "No")
+                Console.WriteLine ("You have decided to not open the chest. You continued your path and discovered it was a dragon's cave.");
+                Thread.Sleep(1000);
+                Console.WriteLine ("The dragon has awoken due to your presence prepare for battle.");
             }
         }
         

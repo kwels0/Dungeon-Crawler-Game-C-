@@ -2,7 +2,7 @@ using System;
 using System.Threading;
 using System.Text;
 
-public class HelloWorld
+public class Game
 {
     public static void Main(string[] args)
     {
@@ -17,10 +17,7 @@ public class HelloWorld
         Thread.Sleep(800);
         
         Console.WriteLine (line + Environment.NewLine + "You start with a sword, armor, and 100 base HP.");
-        int health = 100;
-        int magic = 100;
 
-        
         Console.WriteLine (line + Environment.NewLine + "Where will you head of to?: ");
         Thread.Sleep(800);
         Console.WriteLine ("The places with quests are:");
@@ -44,7 +41,7 @@ public class HelloWorld
         
         if (place == "Cave")
         {
-        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + a + cave + Environment.NewLine + line);
+        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + a + "\n" + cave + Environment.NewLine + line);
         Thread.Sleep(1000);
         Console.WriteLine ("You have entered the cave. Their appears to be 2 pathways. Where will you go?" + Environment.NewLine + line + Environment.NewLine + "Right or Left?" + Environment.NewLine + line);
             string path = Console.ReadLine();
@@ -232,11 +229,11 @@ public class HelloWorld
         else if (place == "Dungeon")
         {
         Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + b);
-        Console.WriteLine (dungeon);
-        
+        Console.WriteLine (dungeon + "\n" + line);
+        Thread.Sleep (700);
         Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a goblin looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
-        
-        start_2:
+        Thread.Sleep (800);
+        start_1:
             String d_choice_1 = Console.ReadLine();
             if (d_choice_1 == "Attack")
             {
@@ -246,22 +243,147 @@ public class HelloWorld
             switch (move)
             {
                 case 1:
-                Console.WriteLine ("1. Attack with your sword");
+                Console.WriteLine ("You attacked it with your sword");
                 break;
                         
                 case 2:
-                Console.WriteLine ("2. Talk");
+                Console.WriteLine ("Talk");
                 break;
                         
                 case 3: 
-                Console.WriteLine ("3. Flee");
+                Console.WriteLine ("You fleed");
                 break;
             }
-                
+                    if (move == 1)
+                    {
+                    Console.WriteLine ("A hored of goblins immediatly came to help their comrade and killed you.\n" + "You died." + dead);
+                    }
+                    
+                    else if (move == 2)
+                    {
+                    Console.WriteLine ("The goblin was intelligent and said: \n" + "Hello human nice to meet you. I will not attack less you agro.");
+                    Thread.Sleep (800);
+                    Console.WriteLine ("Will you attack still? \n" + "Yes or No");
+                    string atk = Console.ReadLine ();
+                    if (atk == "Yes")
+                    {
+                    Console.WriteLine ("A hored of goblins immediatly came to help their comrade and killed you.\n" + "You died." + dead);       
+                    }
+                    else if (atk == "No")
+                    {
+                    Console.WriteLine ("The goblin said: \n" + "Wise choice. Then left."); 
+                    Thread.Sleep (800);
+                    }
+                    Console.WriteLine ("You are now exploring the dungeon and felt an ominous aura within a door. \n" + "Will you Enter?");
+                    Thread.Sleep (700);
+                    Console.WriteLine ("Yes or No");
+                    string ent = Console.ReadLine ();
+                    if (ent == "Yes")
+                    {
+                    Console.WriteLine ("It was the room of the Goblin King. \n" + "Prepare for a boss fight");
+                    Thread.Sleep (800);
+                    Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne.");
+                    Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                    int gboss = Convert.ToInt32(Console.ReadLine());
+                    switch (gboss)
+                    {
+                        case 1:
+                        Console.WriteLine ("You attacked it with your sword");
+                        break;
+                                
+                        case 2:
+                        Console.WriteLine ("Talk");
+                        break;
+                                
+                        case 3: 
+                        Console.WriteLine ("Flee");
+                        break;
+                    }
+                        if (gboss == 1)
+                        {
+                        Console.WriteLine ("You were too weak to deal damage.\n" + "You died." + dead);
+                        }
+                        else if (gboss == 2)
+                        {
+                        Console.WriteLine ("I want treasure to boosts my abilities. You Said.");
+                        Thread.Sleep (800);
+                        Console.WriteLine ("The Goblin King offers you a potion of immortality.");
+                        Thread.Sleep (800);
+                        Console.WriteLine ("Will you take it? \n" + "Yes or No");
+                        string pot = Console.ReadLine ();
+                        if (pot == "Yes")
+                        {
+                        Console.WriteLine ("It was poison. \n" + "You died" + dead);
+                        }
+                        else if (pot == "No")
+                        {
+                        Console.WriteLine ("You approached the Goblin King without any plan of partaking in his plan and picked up a silver dagger laying around.");
+                        Thread.Sleep (800);
+                        Console.WriteLine ("You stabbed the Gobling King with the dagger and killed him. \n" + "You Won!");
+                        }
+                        }
+                        else if (gboss == 3)
+                        {
+                        Console.WriteLine ("Hordes of goblins went after you due to the Goblin King's order. \n" + "You died" + dead);
+                        }
+                    }
+                    else if (ent == "No")
+                    {
+                    Console.WriteLine ("You were assasinated by goblin assasins by the Goblin KIng's door. \n" + "You died." + dead);
+                    }
+                }
             }
         else if (d_choice_1 == "Sneak around")
         {
-        Console.WriteLine ("Sneaking around was succesful you are now in the boss room");    
+        Console.WriteLine ("Sneaking around was succesful you are now in the boss room");
+        Thread.Sleep (800);
+        Console.WriteLine ("It was the room of the Goblin King. \n" + "Prepare for a boss fight");
+        Thread.Sleep (800);
+        Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne.");
+        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+        int gboss = Convert.ToInt32(Console.ReadLine());
+            switch (gboss)
+            {
+            case 1:
+            Console.WriteLine ("You attacked it with your sword");
+            break;
+                                
+            case 2:
+            Console.WriteLine ("Talk");
+            break;
+                                
+            case 3: 
+            Console.WriteLine ("Flee");
+            break;
+            }
+            if (gboss == 1)
+            {
+            Console.WriteLine ("You were too weak to deal damage.\n" + "You died." + dead);
+            }
+        
+            else if (gboss == 2)
+            {
+            Console.WriteLine ("I want treasure to boosts my abilities. You Said.");
+            Thread.Sleep (800);
+            Console.WriteLine ("The Goblin King offers you a potion of immortality.");
+            Thread.Sleep (800);
+            Console.WriteLine ("Will you take it? \n" + "Yes or No");
+            string pot = Console.ReadLine ();
+            if (pot == "Yes")
+            {
+            Console.WriteLine ("It was poison. \n" + "You died" + dead);
+            }
+            else if (pot == "No")
+            {
+            Console.WriteLine ("You approached the Goblin King without any plan of partaking in his plan and picked up a silver dagger laying around.");
+            Thread.Sleep (800);
+            Console.WriteLine ("You stabbed the Gobling King with the dagger and killed him. \n" + "You Won!");
+            }
+            }
+            else if (gboss == 3)
+            {
+            Console.WriteLine ("Hordes of goblins went after you due to the Goblin King's order. \n" + "You died" + dead);
+            }
         }
         }
         

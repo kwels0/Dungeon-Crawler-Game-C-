@@ -105,31 +105,44 @@ public class HelloWorld
         
         Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a monster looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
         
-        String d_choice_1 = Console.ReadLine();
-        if (d_choice_1 == "Attack")
-        {
-        Console.WriteLine ("Prepare for battle");
-        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
-        int move = Convert.ToInt32(Console.ReadLine());
-        switch (move)
-        {
-                    case 1:
-                    Console.WriteLine ("1. Attack with your sword");
-                    break;
-                    
-                    case 2:
-                    Console.WriteLine ("2. Talk");
-                    break;
-                    
-                    case 3: 
-                    Console.WriteLine ("3. Flee");
-                    break;
-        }
-            if (move == 1)
+        start_1:
+            String d_choice_1 = Console.ReadLine();
+            if (d_choice_1 == "Attack")
             {
-            Console.WriteLine ("You have killed the undead. Gained a bone.");    
+            Console.WriteLine ("Prepare for battle");
+            Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+            int move = Convert.ToInt32(Console.ReadLine());
+            switch (move)
+            {
+                        case 1:
+                        Console.WriteLine ("1. Attack with your sword");
+                        break;
+                        
+                        case 2:
+                        Console.WriteLine ("2. Talk");
+                        
+                        break;
+                        
+                        case 3: 
+                        Console.WriteLine ("3. Flee");
+                        break;
             }
-        }
+                if (move == 1)
+                {
+                Console.WriteLine ("You have killed the undead. Gained a bone.");   
+                Thread.Sleep(1000);
+                Console.WriteLine ("Killing the undead was a trap. The boss was alarmed.");
+                Thread.Sleep(500);
+                Console.WriteLine ("Get ready to fight the boss. Battle Start.");
+                }
+                else if (move == 2)
+                {
+                Console.WriteLine ("The undead does not have a mouth so it just rattles.");
+                goto start_1;
+                }
+                else if (move == 3)
+                Console.WriteLine ("You have fled the battle.");
+            }
         else if (d_choice_1 == "Sneak around")
         {
         Console.WriteLine ("Sneaking around was succesful you are now in the boss room");    

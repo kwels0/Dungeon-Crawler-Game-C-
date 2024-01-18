@@ -8,7 +8,7 @@ public class Game
     {
         Console.WriteLine ("Game Start!!!");
         Thread.Sleep(1000);
-        Console.WriteLine ("In the realm of Runettera, a lone adventurer emerges.The adventurer goes and ventures out to discover treasures yet to be uncovered by man. Guided by destiny, he embarks on a perilous journey using his abilities with the sword and determination to grab treaures for his own. With his skills by his side, he must venture to unknown places, fight monsters, and prevent himself from dying from his own choices. You are that adventurer and must pick the correct choices in order to discover treasures and not die.");
+        Console.WriteLine ("In the realm of Runettera, a lone adventurer emerges.The adventurer goes and ventures out to discover treasures yet to be uncovered by man. Guided by destiny, he embarks on a perilous journey using his abilities with the sword and determination to grab treaures for his own. With his skills by his side, he must venture to unknown places, fight monsters, and prevent himself from dying from his own choices. You are that adventurer and must pick the correct choices in order to discover treasures and avoid death.");
         Thread.Sleep(800);
         string line = "__________________________________________";
         Console.WriteLine(line + Environment.NewLine + "What's your name adventurer? :");
@@ -389,9 +389,154 @@ public class Game
         
         else if (place == "Forest")
         {
-        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + c);
-        Console.WriteLine (forest);
-        }
+        Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + c + forest + Environment.NewLine + line);
+        Thread.Sleep (700);
+        Console.WriteLine ("Within the forest, you entered the elves territory. The elves are not friendly to humans and you immediatly entered battle. \nAn elf scout fired an arrow and missed.");
+        Thread.Sleep (700);
+        Console.WriteLine ("Battle Begin");
+        Thread.Sleep (700);
+        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+        battle:
+            int move = Convert.ToInt32(Console.ReadLine());
+            switch (move)
+            {
+                case 1:
+                Console.WriteLine ("You attacked it with your sword.");
+                Thread.Sleep(700);
+                Console.WriteLine ("The elf died.");
+                break;
+                        
+                case 2:
+                Console.WriteLine ("Talk");
+                break;
+                        
+                case 3: 
+                Console.WriteLine ("Flee");
+                break;
+                }
+                if (move == 1)
+                {
+                Console.WriteLine ("You have killed the elf. Took its bow.");   
+                Thread.Sleep(1000);
+                Console.WriteLine ("The choice you have made started the war of the 2 species. \n" + "You died." + dead);
+                }
+                else if (move == 2)
+                {
+                Console.WriteLine ("You talked with the elf and tricked the elf you don't mean harm. \nIt didn't trust you. It fired an arrow and killed you. \n" + "You died." + dead);
+                }
+                else if (move == 3)
+                {
+                Console.WriteLine ("You escaped far away from the elves territory.");
+                Thread.Sleep (800);
+                Console.WriteLine ("You are now deep within the forest. \nWhere will you go?");
+                Thread.Sleep (800);
+                Console.WriteLine ("West or East");
+                string der = Console.ReadLine ();
+                Thread.Sleep (800);
+                if (der == "West")
+                {
+                Console.WriteLine ("You encountered a dragon.");
+                Thread.Sleep (800);
+                Console.WriteLine ("Prepare for battle");
+                Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                drag:
+                int drg = Convert.ToInt32(Console.ReadLine());
+                switch (drg)
+                {
+                    case 1:
+                    Console.WriteLine ("You attacked it with your sword.");
+                    Thread.Sleep(700);
+                    break;
+                            
+                    case 2:
+                    Console.WriteLine ("Talk");
+                    break;
+                            
+                    case 3: 
+                    Console.WriteLine ("Flee");
+                    break;
+                }    
+                    if (drg == 1)
+                    {
+                    Console.WriteLine ("You have wounded the dragon but it fled."); 
+                    Thread.Sleep (1000);
+                    Console.WriteLine ("You are now walking in the deeper parts of the forest.\n" + "There appears to be a huge tree. \n" + "Will you enter?");
+                    Thread.Sleep (800);
+                    Console.WriteLine ("Yes or No");
+                    string tre = Console.ReadLine ();
+                    if (tre == "Yes")
+                    {
+                        Console.WriteLine ("You entered the tree and met the Queen of Elves.");
+                        Thread.Sleep (700);
+                        Console.WriteLine ("The Queen gave you the task of killing the dragon. You accepted");
+                        Thread.Sleep (700);
+                        Console.WriteLine ("You went and found the dragon you previously wounded. \nPrepare for battle");
+                        Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
+                        wnd:
+                        int dtr = Convert.ToInt32(Console.ReadLine());
+                        switch (dtr)
+                        {
+                            case 1:
+                            Console.WriteLine ("You attacked it with your sword.");
+                            Thread.Sleep(700);
+                            break;
+                                    
+                            case 2:
+                            Console.WriteLine ("Talk");
+                            break;
+                                    
+                            case 3: 
+                            Console.WriteLine ("Flee");
+                            break;
+                        }
+                            if (dtr == 1)
+                            {
+                            Console.WriteLine ("You killed the Dragon! The Queen rewarded you with treasures.\nYou Won! ");
+                            }
+                            
+                            else if (dtr == 2)
+                            {
+                            Console.WriteLine ("The dragon didn't talk back. It fired it's breath at you");
+                            for (int i = 1; i < 5; i++) 
+                            {
+                            Console.WriteLine(i + "HRRRRRHSHHH");
+                            }
+                            Thread.Sleep (800);
+                            Console.WriteLine ("You died" + dead);
+                            }
+                            
+                            else if (dtr == 3)
+                            {
+                            Console.WriteLine ("You fled but the Dragon killed the Queen of Elves. \n You Lost." + dead);
+                            }
+                    }
+                    else if (tre == "No")
+                    {
+                    Console.WriteLine ("The Dragon you wounded found you and fired its breath immediatly. \n You died" + dead);
+                    }
+                    }
+                    else if (drg == 2)
+                    {
+                    Console.WriteLine ("The dragon didn't talk back. It fired it's breath at you");
+                    for (int i = 1; i < 5; i++) 
+                    {
+                    Console.WriteLine(i + "HRRRRRHSHHH");
+                    }
+                    Thread.Sleep (800);
+                    Console.WriteLine ("You died" + dead);
+                    }
+                    else if (drg == 3)
+                    {
+                    Console.WriteLine ("You can't outrun a dragon with wings.\n" + "You died" + dead);
+                    }
+                }
+                
+                else if (der == "East")
+                {
+                    
+                }
+                }
         
+        }
     }
 }

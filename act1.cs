@@ -231,7 +231,7 @@ public class Game
         Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + b);
         Console.WriteLine (dungeon + "\n" + line);
         Thread.Sleep (700);
-        Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a goblin looting them." + Environment.NewLine + "Will you Attack or Sneak around?");
+        Console.WriteLine ("You are inside the dungeon there is a pile of dead bodies in the entrance and there is a goblin looting them." + Environment.NewLine + "Will you Attack or Sneak around?" + Environment.NewLine + line);
         Thread.Sleep (800);
         start_1:
             String d_choice_1 = Console.ReadLine();
@@ -261,7 +261,7 @@ public class Game
                     
                     else if (move == 2)
                     {
-                    Console.WriteLine ("The goblin was intelligent and said: \n" + "Hello human nice to meet you. I will not attack less you agro.");
+                    Console.WriteLine ("The goblin was intelligent and said: \n" + "Hello human nice to meet you. I will not attack less you agro." + Environment.NewLine + line);
                     Thread.Sleep (800);
                     Console.WriteLine ("Will you attack still? \n" + "Yes or No");
                     string atk = Console.ReadLine ();
@@ -274,7 +274,7 @@ public class Game
                     Console.WriteLine ("The goblin said: \n" + "Wise choice. Then left."); 
                     Thread.Sleep (800);
                     }
-                    Console.WriteLine ("You are now exploring the dungeon and felt an ominous aura within a door. \n" + "Will you Enter?");
+                    Console.WriteLine ("You are now exploring the dungeon and felt an ominous aura within a door. \n" + "Will you Enter?" + Environment.NewLine + line);
                     Thread.Sleep (700);
                     Console.WriteLine ("Yes or No");
                     string ent = Console.ReadLine ();
@@ -282,7 +282,7 @@ public class Game
                     {
                     Console.WriteLine ("It was the room of the Goblin King. \n" + "Prepare for a boss fight");
                     Thread.Sleep (800);
-                    Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne.");
+                    Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne." + Environment.NewLine + line);
                     Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
                     int gboss = Convert.ToInt32(Console.ReadLine());
                     switch (gboss)
@@ -307,7 +307,7 @@ public class Game
                         {
                         Console.WriteLine ("I want treasure to boosts my abilities. You Said.");
                         Thread.Sleep (800);
-                        Console.WriteLine ("The Goblin King offers you a potion of immortality.");
+                        Console.WriteLine ("The Goblin King offers you a potion of immortality." + Environment.NewLine + line);
                         Thread.Sleep (800);
                         Console.WriteLine ("Will you take it? \n" + "Yes or No");
                         string pot = Console.ReadLine ();
@@ -339,7 +339,7 @@ public class Game
         Thread.Sleep (800);
         Console.WriteLine ("It was the room of the Goblin King. \n" + "Prepare for a boss fight");
         Thread.Sleep (800);
-        Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne.");
+        Console.WriteLine ("The Goblin King asks you what do you want while sitting in a throne." + Environment.NewLine + line);
         Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
         int gboss = Convert.ToInt32(Console.ReadLine());
             switch (gboss)
@@ -363,7 +363,7 @@ public class Game
         
             else if (gboss == 2)
             {
-            Console.WriteLine ("I want treasure to boosts my abilities. You Said.");
+            Console.WriteLine ("I want treasure to boosts my abilities. You Said." + Environment.NewLine + line);
             Thread.Sleep (800);
             Console.WriteLine ("The Goblin King offers you a potion of immortality.");
             Thread.Sleep (800);
@@ -375,7 +375,7 @@ public class Game
             }
             else if (pot == "No")
             {
-            Console.WriteLine ("You approached the Goblin King without any plan of partaking in his plan and picked up a silver dagger laying around.");
+            Console.WriteLine ("You approached the Goblin King without any plan of partaking in his plan and picked up a silver dagger laying around." + Environment.NewLine + line);
             Thread.Sleep (800);
             Console.WriteLine ("You stabbed the Gobling King with the dagger and killed him. \n" + "You Won!");
             }
@@ -391,7 +391,7 @@ public class Game
         {
         Console.WriteLine (line + Environment.NewLine + "You have decided to go to the " + c + forest + Environment.NewLine + line);
         Thread.Sleep (700);
-        Console.WriteLine ("Within the forest, you entered the elves territory. The elves are not friendly to humans and you immediatly entered battle. \nAn elf scout fired an arrow and missed.");
+        Console.WriteLine ("Within the forest, you entered the elves territory. The elves are not friendly to humans and you immediatly entered battle. \nAn elf scout fired an arrow and missed." + Environment.NewLine + line);
         Thread.Sleep (700);
         Console.WriteLine ("Battle Begin");
         Thread.Sleep (700);
@@ -426,16 +426,16 @@ public class Game
                 }
                 else if (move == 3)
                 {
-                Console.WriteLine ("You escaped far away from the elves territory.");
+                Console.WriteLine ("You escaped far away from the elves territory." + Environment.NewLine + line);
                 Thread.Sleep (800);
-                Console.WriteLine ("You are now deep within the forest. \nWhere will you go?");
+                Console.WriteLine ("You are now deep within the forest. \nWhere will you go?" + Environment.NewLine + line);
                 Thread.Sleep (800);
-                Console.WriteLine ("West or East");
+                Console.WriteLine ("West or East" + Environment.NewLine + line);
                 string der = Console.ReadLine ();
                 Thread.Sleep (800);
                 if (der == "West")
                 {
-                Console.WriteLine ("You encountered a dragon.");
+                Console.WriteLine ("You encountered a dragon." + Environment.NewLine + line);
                 Thread.Sleep (800);
                 Console.WriteLine ("Prepare for battle");
                 Console.WriteLine ("1. Attack" + Environment.NewLine + "2. Talk" + Environment.NewLine + "3. Flee");
@@ -458,15 +458,15 @@ public class Game
                 }    
                     if (drg == 1)
                     {
-                    Console.WriteLine ("You have wounded the dragon but it fled."); 
+                    Console.WriteLine ("You have wounded the dragon but it fled." + Environment.NewLine + line); 
                     Thread.Sleep (1000);
-                    Console.WriteLine ("You are now walking in the deeper parts of the forest.\n" + "There appears to be a huge tree. \n" + "Will you enter?");
+                    Console.WriteLine ("You are now walking in the deeper parts of the forest.\n" + "There appears to be a huge tree. \n" + "Will you enter?" + Environment.NewLine + line);
                     Thread.Sleep (800);
                     Console.WriteLine ("Yes or No");
                     string tre = Console.ReadLine ();
                     if (tre == "Yes")
                     {
-                        Console.WriteLine ("You entered the tree and met the Queen of Elves.");
+                        Console.WriteLine ("You entered the tree and met the Queen of Elves." + Environment.NewLine + line);
                         Thread.Sleep (700);
                         Console.WriteLine ("The Queen gave you the task of killing the dragon. You accepted");
                         Thread.Sleep (700);
@@ -491,7 +491,7 @@ public class Game
                         }
                             if (dtr == 1)
                             {
-                            Console.WriteLine ("You killed the Dragon! The Queen rewarded you with treasures.\nYou Won! ");
+                            Console.WriteLine (line + Environment.NewLine + "You killed the Dragon! The Queen rewarded you with treasures.\nYou Won! ");
                             }
                             
                             else if (dtr == 2)
@@ -533,7 +533,9 @@ public class Game
                 
                 else if (der == "East")
                 {
-                    
+                Console.WriteLine ("You went East. \n" + line);
+                Thread.Sleep (800);
+                Console.WriteLine ("You found you way back to the outside of the forest. \nYou survived but didn't get any from that adventure." + Environment.NewLine + line);
                 }
                 }
         
